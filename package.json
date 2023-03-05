@@ -23,11 +23,12 @@
     "build": "npm run build:types",
     "build:css": "lessc src/styles/index.less dist/index.css && npm run prefix && npm run copy:less",
     "build:umd": "BABEL_ENV=umd rollup -c && npm run build:css",
-    "prepublishOnly": "npm run build && npm run build:umd",
+    "prepublishOnly": "npm run build && npm run build:umd && npm run push",
     "test": "jest --config ./jest.config.js",
     "test:watch": "jest  --config ./jest.config.js --watch",
     "test:coverage": "jest  --config ./jest.config.js --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "push": "git add . && git commit -m 'auto push' && git push"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.3",
