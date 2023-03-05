@@ -1,0 +1,135 @@
+{
+  "manifest": {
+    "name": "simmslabschatui",
+    "version": "2.4.8-beta.0",
+    "description": "The React library for Chatbot UI",
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "browser": "dist/index.js",
+    "style": "dist/index.css",
+    "typings": "lib/index.d.ts",
+    "files": [
+      "dist",
+      "es",
+      "lib"
+    ],
+    "scripts": {
+      "clean": "rm -rf dist && rm -rf es && rm -rf lib",
+      "prebuild": "npm run clean",
+      "prefix": "NODE_ENV=production postcss dist/index.css -o dist/index.css",
+      "copy:less": "copyfiles -u 1 src/**/*.less src/**/**/*.less es",
+      "js:cjs": "BABEL_ENV=cjs babel src -d lib --extensions '.ts,.tsx'",
+      "js:esm": "BABEL_ENV=esm babel src -d es --extensions '.ts,.tsx'",
+      "build:types": "tsc -p tsconfig.build.json",
+      "build": "npm run build:types",
+      "build:css": "lessc src/styles/index.less dist/index.css && npm run prefix && npm run copy:less",
+      "build:umd": "BABEL_ENV=umd rollup -c && npm run build:css",
+      "prepublishOnly": "npm run build && npm run build:umd",
+      "test": "jest --config ./jest.config.js",
+      "test:watch": "jest  --config ./jest.config.js --watch",
+      "test:coverage": "jest  --config ./jest.config.js --coverage",
+      "prepare": "husky install"
+    },
+    "dependencies": {
+      "@babel/runtime": "^7.18.3",
+      "@babel/runtime-corejs3": "^7.18.3",
+      "babel-cli": "^6.26.0",
+      "clsx": "^1.1.1",
+      "core-js": "^3.23.1",
+      "dompurify": "^2.3.8",
+      "intersection-observer": "^0.12.2",
+      "jest-environment-jsdom": "^29.4.3",
+      "react-icons": "^4.8.0"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.17.10",
+      "@babel/core": "^7.18.5",
+      "@babel/plugin-proposal-class-properties": "^7.17.12",
+      "@babel/plugin-transform-runtime": "^7.18.5",
+      "@babel/preset-env": "^7.18.2",
+      "@babel/preset-react": "^7.17.12",
+      "@babel/preset-typescript": "^7.17.12",
+      "@commitlint/cli": "^17.0.2",
+      "@commitlint/config-conventional": "^17.0.2",
+      "@rollup/plugin-babel": "^5.3.1",
+      "@rollup/plugin-commonjs": "^22.0.0",
+      "@rollup/plugin-node-resolve": "^13.3.0",
+      "@testing-library/jest-dom": "^5.16.4",
+      "@testing-library/react": "^12.1.5",
+      "@types/dompurify": "^2.3.3",
+      "@types/jest": "^28.1.1",
+      "@types/react": "^17.0.45",
+      "@types/react-dom": "^17.0.17",
+      "@types/resize-observer-browser": "^0.1.7",
+      "@typescript-eslint/eslint-plugin": "^5.28.0",
+      "@typescript-eslint/parser": "^5.28.0",
+      "autoprefixer": "^10.4.7",
+      "copyfiles": "^2.4.1",
+      "cssnano": "^5.1.11",
+      "eslint": "^8.17.0",
+      "eslint-config-airbnb": "^19.0.4",
+      "eslint-config-airbnb-typescript": "^17.0.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-compat": "^4.0.2",
+      "eslint-plugin-import": "^2.26.0",
+      "eslint-plugin-jsx-a11y": "^6.5.1",
+      "eslint-plugin-react": "^7.30.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "husky": "^8.0.1",
+      "jest": "^28.1.1",
+      "less": "^4.1.3",
+      "postcss": "^8.4.14",
+      "postcss-cli": "^9.1.0",
+      "postcss-pxtorem": "^6.0.0",
+      "react": "17.0.2",
+      "react-dom": "^17.0.2",
+      "rollup": "^2.75.6",
+      "rollup-plugin-terser": "^7.0.2",
+      "ts-jest": "^28.0.5",
+      "typescript": "^4.7.3"
+    },
+    "peerDependencies": {
+      "react": ">=16.8.0",
+      "react-dom": ">=16.8.0"
+    },
+    "browserslist": [
+      ">0.2%",
+      "Android >= 4.4",
+      "not dead",
+      "not op_mini all"
+    ],
+    "keywords": [
+      "react",
+      "react-component",
+      "chat",
+      "chat-ui"
+    ],
+    "homepage": "https://chatui.io/",
+    "bugs": {
+      "url": "https://github.com/alibaba/ChatUI/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/alibaba/ChatUI"
+    },
+    "author": {
+      "name": "akai",
+      "email": "akainice@gmail.com"
+    },
+    "license": "MIT",
+    "_registry": "npm",
+    "_loc": "/Users/uptechdev/Library/Caches/Yarn/v6/npm-simmslabschatui-2.4.8-beta.0-ef948bdf-df70-4bf9-9a76-b46525338442-1677866702888/node_modules/simmslabschatui/package.json",
+    "readmeFilename": "README.md",
+    "readme": "<h1 align=\"center\">\n  <a href=\"https://chatui.io/\">\n    <img width=\"109\" height=\"28\" src=\"https://gw.alicdn.com/tfs/TB1uYH4QoY1gK0jSZFMXXaWcVXa-218-56.svg\" alt=\"ChatUI\">\n  </a>\n</h1>\n\n<p align=\"center\">The UI design language and React library for Conversational UI</p>\n\n<p align=\"center\">Website：<a href=\"https://chatui.io/\" target=\"_blank\">https://chatui.io</a></p>\n\n<div align=\"center\">\n\n[![LICENSE](https://img.shields.io/npm/l/@chatui/core?style=flat-square)](https://github.com/alibaba/ChatUI/blob/master/LICENSE)\n[![NPM version](https://img.shields.io/npm/v/@chatui/core?style=flat-square)](https://www.npmjs.com/package/@chatui/core)\n[![NPM downloads](https://img.shields.io/npm/dm/@chatui/core?style=flat-square)](https://www.npmjs.com/package/@chatui/core)\n[![Gzip Size](https://img.badgesize.io/https://unpkg.com/@chatui/core@0.1.0/dist/index.js?compression=gzip)](https://unpkg.com/@chatui/core@0.1.0/dist/index.js)\n[![Jsdelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@chatui/core?style=flat-square)](https://cdn.jsdelivr.net/npm/@chatui/core)\n\n</div>\n\n<p align=\"center\">\n  <img width=\"750\" src=\"https://gw.alicdn.com/tfs/TB1WTl.lQ9l0K4jSZFKXXXFjpXa-1500-833.jpg\">\n</p>\n\nEnglish | [简体中文](./README.zh-CN.md)\n\n## Features\n\n- 😎 **Best Practices**: The best practice for chat interaction based on our experience of Alime Chatbot\n- 🛡 **TypeScript**: Written in TypeScript with predictable static types\n- 📱 **Responsive**: Responsive design to adapt automatically to whatever device\n- ♿ **Accessibility**: Accessibility support and get the certification from Accessibility Research Association\n- 🎨 **Theming**: Powerful theme customization in every detail\n- 🌍 **International**: Internationalization support for dozens of languages\n\n## Environment Support\n\n- Modern browsers (support [CSS Variables](https://caniuse.com/css-variables))\n- Internet Explorer 11 (with [polyfills](https://stackoverflow.com/questions/57020976/polyfills-in-2019-for-ie11) and [CSS Variables Polyfill](https://github.com/nuxodin/ie11CustomProperties) / [css-vars-ponyfill](https://github.com/jhildenbiddle/css-vars-ponyfill))\n\n| <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png\" alt=\"Edge\" width=\"24px\" height=\"24px\" /><br>Edge | <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png\" alt=\"Firefox\" width=\"24px\" height=\"24px\" /><br>Firefox | <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png\" alt=\"Chrome\" width=\"24px\" height=\"24px\" /><br>Chrome | <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png\" alt=\"Safari\" width=\"24px\" height=\"24px\" /><br>Safari | <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png\" alt=\"iOS Safari\" width=\"24px\" height=\"24px\" /><br>iOS Safari | <img src=\"https://raw.githubusercontent.com/alrra/browser-logos/master/src/android-webview/android-webview_48x48.png\" alt=\"Android WebView\" width=\"24px\" height=\"24px\" /><br>Android WebView |\n| --- | --- | --- | --- | --- | --- |\n| 16+ | 31+ | 49+ | 9.1+ | 9.3+ | 6+ |\n\n## Install\n\n```bash\nnpm install @chatui/core --save\n```\n\n```bash\nyarn add @chatui/core\n```\n\n## Usage\n\n```jsx\nimport Chat, { Bubble, useMessages } from '@chatui/core';\nimport '@chatui/core/dist/index.css';\n\nconst App = () => {\n  const { messages, appendMsg, setTyping } = useMessages([]);\n\n  function handleSend(type, val) {\n    if (type === 'text' && val.trim()) {\n      appendMsg({\n        type: 'text',\n        content: { text: val },\n        position: 'right',\n      });\n\n      setTyping(true);\n\n      setTimeout(() => {\n        appendMsg({\n          type: 'text',\n          content: { text: 'Bala bala' },\n        });\n      }, 1000);\n    }\n  }\n\n  function renderMessageContent(msg) {\n    const { content } = msg;\n    return <Bubble content={content.text} />;\n  }\n\n  return (\n    <Chat\n      navbar={{ title: 'Assistant' }}\n      messages={messages}\n      renderMessageContent={renderMessageContent}\n      onSend={handleSend}\n    />\n  );\n};\n```\n\n[![DEMO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/chatui-demo-o6n3z?fontsize=14&hidenavigation=1&theme=dark)\n\n### Development\n\n```bash\ncd storybook\nnpm i\nnpm run storybook\n```\n\n## Theme\n\nVisit [Customize Theme](https://chatui.io/docs/customize-theme) for detail\n\n## Internationalization\n\nVisit [i18n](https://chatui.io/docs/i18n) for detail\n\n## Discussion\n\n<img width=\"400\" height=\"515\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01yO0rNg1ZDKHKIulc8_!!6000000003160-0-tps-828-1068.jpg\">\n\n## License\n\nMIT\n",
+    "licenseText": "MIT License\n\nCopyright (c) 2020 Alibaba\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "type": "copy",
+    "registry": "npm",
+    "hash": "183dbab7-fe60-4a08-aa38-0c6fba87116e-1677867143505",
+    "reference": "/Users/uptechdev/Workspace/RemixJS/mobile.bestdealsghana.com/ChatUI"
+  },
+  "registry": "npm",
+  "hash": "183dbab7-fe60-4a08-aa38-0c6fba87116e-1677867143505"
+}
