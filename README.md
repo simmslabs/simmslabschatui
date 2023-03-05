@@ -6,23 +6,21 @@
 
 <p align="center">The UI design language and React library for Conversational UI</p>
 
-<p align="center">Website：<a href="https://chatui.io/" target="_blank">https://chatui.io</a></p>
+<p align="center">Website：<a href="https://chatui.io/" target="_blank">https://simmslabs.com</a></p>
 
 <div align="center">
 
-[![LICENSE](https://img.shields.io/npm/l/@chatui/core?style=flat-square)](https://github.com/alibaba/ChatUI/blob/master/LICENSE)
-[![NPM version](https://img.shields.io/npm/v/@chatui/core?style=flat-square)](https://www.npmjs.com/package/@chatui/core)
-[![NPM downloads](https://img.shields.io/npm/dm/@chatui/core?style=flat-square)](https://www.npmjs.com/package/@chatui/core)
-[![Gzip Size](https://img.badgesize.io/https://unpkg.com/@chatui/core@0.1.0/dist/index.js?compression=gzip)](https://unpkg.com/@chatui/core@0.1.0/dist/index.js)
-[![Jsdelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@chatui/core?style=flat-square)](https://cdn.jsdelivr.net/npm/@chatui/core)
+[![LICENSE](https://img.shields.io/npm/l/simmslabschatui?style=flat-square)](https://github.com/alibaba/ChatUI/blob/master/LICENSE)
+[![NPM version](https://img.shields.io/npm/v/simmslabschatui?style=flat-square)](https://www.npmjs.com/package/simmslabschatui)
+[![NPM downloads](https://img.shields.io/npm/dm/simmslabschatui?style=flat-square)](https://www.npmjs.com/package/simmslabschatui)
+[![Gzip Size](https://img.badgesize.io/https://unpkg.com/simmslabschatui@0.1.0/dist/index.js?compression=gzip)](https://unpkg.com/simmslabschatui@0.1.0/dist/index.js)
+[![Jsdelivr Hits](https://img.shields.io/jsdelivr/npm/hm/simmslabschatui?style=flat-square)](https://cdn.jsdelivr.net/npm/simmslabschatui)
 
 </div>
 
-<p align="center">
+<!-- <p align="center">
   <img width="750" src="https://gw.alicdn.com/tfs/TB1WTl.lQ9l0K4jSZFKXXXFjpXa-1500-833.jpg">
-</p>
-
-English | [简体中文](./README.zh-CN.md)
+</p> -->
 
 ## Features
 
@@ -45,18 +43,18 @@ English | [简体中文](./README.zh-CN.md)
 ## Install
 
 ```bash
-npm install @chatui/core --save
+npm install simmslabschatui --save
 ```
 
 ```bash
-yarn add @chatui/core
+yarn add simmslabschatui
 ```
 
 ## Usage
 
 ```jsx
-import Chat, { Bubble, useMessages } from '@chatui/core';
-import '@chatui/core/dist/index.css';
+import Chat, { Bubble, useMessages } from 'simmslabschatui';
+import 'simmslabschatui/dist/index.css';
 
 const App = () => {
   const { messages, appendMsg, setTyping } = useMessages([]);
