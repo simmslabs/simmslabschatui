@@ -113,8 +113,8 @@ Visit [Customize Theme](https://chatui.io/docs/customize-theme) for detail
 Visit [i18n](https://chatui.io/docs/i18n) for detail
 
 ## Discussion
-
-<img width="400" height="515" src="https://img.alicdn.com/imgextra/i2/O1CN01yO0rNg1ZDKHKIulc8_!!6000000003160-0-tps-828-1068.jpg">
+<!-- 
+<img width="400" height="515" src="https://img.alicdn.com/imgextra/i2/O1CN01yO0rNg1ZDKHKIulc8_!!6000000003160-0-tps-828-1068.jpg"> -->
 
 ## License
 
