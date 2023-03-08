@@ -4,7 +4,7 @@ import { Button, ButtonProps } from '../Button';
 import { Icon } from '../Icon';
 
 export interface IconButtonProps extends ButtonProps {
-  img?: string;
+  img?: React.ReactNode;
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => {
@@ -12,7 +12,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>((
   return (
     <Button className={clsx('IconBtn', className)} ref={ref} {...other}>
       {icon && typeof icon == "string" ? <Icon type={icon} /> : icon}
-      {!icon && img && <img src={img} alt="" />}
+      {/* {!icon && img && icon} */}
     </Button>
   );
 });

@@ -12,6 +12,7 @@ import { SendButton } from './SendButton';
 import { Action } from './Action';
 import toggleClass from '../../utils/toggleClass';
 // import { IconToImage } from '../../utils/fixes';
+// import { IconToImage } from '../../utils/fixes';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { AiOutlinePlusCircle } from "react-icons/ai";
 
@@ -37,7 +38,7 @@ export type ComposerProps = {
   onToolbarClick?: (item: ToolbarItemProps, event: React.MouseEvent) => void;
   onAccessoryToggle?: (isAccessoryOpen: boolean) => void;
   rightAction?: IconButtonProps;
-  toolbarIcon?: React.ReactNode;
+  toolbarIcon?: React.ReactElement;
 };
 
 export interface ComposerHandle {
@@ -311,7 +312,7 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
               active: isAccessoryOpen,
             })}
             icon={toolbarIcon}
-            // img={IconToImage(<AiOutlinePlusCircle />)}
+            // img={IconToImage(toolbarIcon)}
             onClick={handleAccessoryToggle}
             aria-label={isAccessoryOpen ? 'Close toolbar' : 'Expand toolbar'}
           />
