@@ -11,9 +11,9 @@ import { ComposerInput } from './ComposerInput';
 import { SendButton } from './SendButton';
 import { Action } from './Action';
 import toggleClass from '../../utils/toggleClass';
-import { IconToImage } from '../../utils/fixes';
+// import { IconToImage } from '../../utils/fixes';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { AiOutlinePlusCircle } from "react-icons/ai";
+// import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export const CLASS_NAME_FOCUSING = 'S--focusing';
 
@@ -37,6 +37,7 @@ export type ComposerProps = {
   onToolbarClick?: (item: ToolbarItemProps, event: React.MouseEvent) => void;
   onAccessoryToggle?: (isAccessoryOpen: boolean) => void;
   rightAction?: IconButtonProps;
+  toolbarIcon?: React.ReactNode;
 };
 
 export interface ComposerHandle {
@@ -49,7 +50,7 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
     textOnce: oTextOnce,
     inputType: initialInputType = 'text',
     wideBreakpoint,
-    placeholder: oPlaceholder = '请输入...',
+    placeholder: oPlaceholder = 'Please enter...',
     recorder = {},
     onInputTypeChange,
     onFocus,
@@ -62,6 +63,7 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
     onToolbarClick,
     rightAction,
     inputOptions,
+    toolbarIcon
   } = props;
 
   const [text, setText] = useState(initialText);
@@ -295,7 +297,7 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
             data-icon={inputTypeIcon}
             icon={inputTypeIcon}
             onClick={handleInputTypeChange}
-            aria-label={isInputText ? '切换到语音输入' : '切换到键盘输入'}
+            aria-label={isInputText ? 'Switch to voice input' : 'Switch to keyboard input'}
           />
         )}
         <div className="Composer-inputWrap">
@@ -308,9 +310,10 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
             className={clsx('Composer-toggleBtn', {
               active: isAccessoryOpen,
             })}
-            img={IconToImage(<AiOutlinePlusCircle />)}
+            icon={toolbarIcon}
+            // img={IconToImage(<AiOutlinePlusCircle />)}
             onClick={handleAccessoryToggle}
-            aria-label={isAccessoryOpen ? '关闭工具栏' : '展开工具栏'}
+            aria-label={isAccessoryOpen ? 'Close toolbar' : 'Expand toolbar'}
           />
         )}
         {(text || textOnce) && <SendButton onClick={handleSendBtnClick} disabled={false} />}

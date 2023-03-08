@@ -1,6 +1,6 @@
 {
   "name": "simmslabschatui",
-  "version": "2.4.13-beta.0",
+  "version": "2.4.14-beta.1",
   "description": "React Chatbot UI Library",
   "main": "lib/index.js",
   "module": "es/index.js",
