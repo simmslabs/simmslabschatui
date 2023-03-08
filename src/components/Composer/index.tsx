@@ -11,10 +11,9 @@ import { ComposerInput } from './ComposerInput';
 import { SendButton } from './SendButton';
 import { Action } from './Action';
 import toggleClass from '../../utils/toggleClass';
-// import { IconToImage } from '../../utils/fixes';
-// import { IconToImage } from '../../utils/fixes';
+import { IconToImage } from '../../utils/fixes';
 // eslint-disable-next-line import/no-extraneous-dependencies
-// import { AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 export const CLASS_NAME_FOCUSING = 'S--focusing';
 
@@ -38,7 +37,7 @@ export type ComposerProps = {
   onToolbarClick?: (item: ToolbarItemProps, event: React.MouseEvent) => void;
   onAccessoryToggle?: (isAccessoryOpen: boolean) => void;
   rightAction?: IconButtonProps;
-  toolbarIcon?: React.ReactElement;
+  toolbarIcon?: React.ReactNode;
 };
 
 export interface ComposerHandle {
@@ -311,8 +310,8 @@ export const Composer = React.forwardRef<ComposerHandle, ComposerProps>((props, 
             className={clsx('Composer-toggleBtn', {
               active: isAccessoryOpen,
             })}
-            icon={toolbarIcon}
-            // img={IconToImage(toolbarIcon)}
+            // icon={toolbarIcon}
+            img={toolbarIcon ? toolbarIcon : IconToImage(<AiOutlinePlusCircle />)}
             onClick={handleAccessoryToggle}
             aria-label={isAccessoryOpen ? 'Close toolbar' : 'Expand toolbar'}
           />
