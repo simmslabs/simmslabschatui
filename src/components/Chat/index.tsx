@@ -145,7 +145,7 @@ export type ChatProps = Omit<ComposerProps, 'onFocus' | 'onChange' | 'onBlur'> &
 export const Chat = React.forwardRef<HTMLDivElement, ChatProps>((props, ref) => {
   const {
     wideBreakpoint,
-    locale = 'zh-CN',
+    locale = 'en-US',
     locales,
     navbar,
     renderNavbar,
@@ -160,7 +160,7 @@ export const Chat = React.forwardRef<HTMLDivElement, ChatProps>((props, ref) => 
     onBackBottomClick,
     quickReplies = [],
     quickRepliesVisible,
-    onQuickReplyClick = () => {},
+    onQuickReplyClick = () => { },
     onQuickReplyScroll,
     renderQuickReplies,
     text,
