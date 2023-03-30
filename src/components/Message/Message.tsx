@@ -48,6 +48,7 @@ export interface MessageProps {
    * 状态
    */
   status?: IMessageStatus;
+
   /**
    * 消息内容渲染函数
    */
