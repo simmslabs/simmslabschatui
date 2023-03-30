@@ -1,6 +1,6 @@
 {
   "name": "@simmslabsinc/chatui",
-  "version": "2.4.14-beta.3",
+  "version": "2.4.14-beta.4",
   "description": "React Chatbot UI Library",
   "main": "lib/index.js",
   "module": "es/index.js",
