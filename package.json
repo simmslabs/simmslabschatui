@@ -1,5 +1,5 @@
 {
-  "name": "@simms-labs/chatui",
+  "name": "@simmslabsinc/chatui",
   "version": "2.4.14-beta.3",
   "description": "React Chatbot UI Library",
   "main": "lib/index.js",
