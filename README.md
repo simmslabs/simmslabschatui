@@ -1,12 +1,12 @@
 <h1 align="center">
-  <a href="https://chatui.io/">
-    <img width="109" height="28" src="https://gw.alicdn.com/tfs/TB1uYH4QoY1gK0jSZFMXXaWcVXa-218-56.svg" alt="ChatUI">
+  <a href="https://simmslabs.com/">
+    <img width="109" height="28" src="https://gensys.simmslabs.com/favicon.png" alt="ChatUI">
   </a>
 </h1>
 
 <p align="center">The UI design language and React library for Conversational UI</p>
 
-<p align="center">Website：<a href="https://chatui.io/" target="_blank">https://simmslabs.com</a></p>
+<p align="center">Website：<a href="https://simmslabs.com/" target="_blank">https://simmslabs.com</a></p>
 
 <div align="center">
 
